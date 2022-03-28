@@ -1,0 +1,48 @@
+html>
+<head>
+<title>카카오톡 버튼있는 메시지 전송하기</title>
+<script id="javascript-sdk" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+</head>
+<body>
+<p><strong>아래 카카오톡 아이콘을 눌러 전송하세요</strong> By. Blackcats4567</p>
+<a id="kakao-link-btn" href="javascript:sendLink()">
+  <img
+    src="https://developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png"
+  />
+</a>
+<script type="text/javascript">
+ Kakao.init('76e5802ecaddf796140d801ccb919722');
+  function sendLink() {
+    Kakao.Link.sendDefault({
+      objectType: 'feed',
+      content: {
+        title: '달서롯데캐슬 네이버 카페',
+        description: '달서롯데캐슬 커뮤니티',
+        imageUrl:
+          'https://www.lottecastle.co.kr/files/etc/2021/12/202112161141132811.jpg',
+        link: {
+          mobileWebUrl: 'https://cafe.naver.com/ideabankcafe',
+          webUrl: 'https://cafe.naver.com/ideabankcafe',
+        },
+      },
+      social: {
+        likeCount: 1284, //99999가 최대입니다
+        commentCount: 187/99999가 최대입니다
+        sharedCount: 311//99999가 최대입니다
+      },
+      buttons: [
+        {
+          title: '네이버 카페 바로가기,
+          link: {
+            mobileWebUrl: 'http://www.lotte.kr',
+            webUrl: 'http://www.lotte.kr',
+          },
+        },
+      ],
+    })
+  }
+</script>
+<!-- www.blackcats4567.com -->
+<!-- 이미지/버튼 클릭 시 주소는 Kakao Developers의 애플리케이션 > 플랫폼 > Web에 넣어야 클릭했을때 성공적으로 표시됩니다 -->
+  </body>
+</html>
